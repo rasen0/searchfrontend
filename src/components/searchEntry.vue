@@ -29,15 +29,15 @@ export default {
   },
   methods: {
     submit () {
-      axios({
-        method: 'post',
-        url: 'account/v1/search',
-        headers: {
-          'Content-type': 'multipart/form-data'
-        },
-        data: this.form
-      })
-      axios.post('account/v1/search4', this.form).then(function (response) {
+      // axios({
+      //   method: 'post',
+      //   url: 'account/v1/search',
+      //   headers: {
+      //     'Content-type': 'multipart/form-data'
+      //   },
+      //   data: this.form
+      // })
+      axios.post('account/v1/search', this.form).then(function (response) {
         if (response.data.text) {
           ElementUI.Message.error(response.data.text)
           this.form.content = response.data.text
